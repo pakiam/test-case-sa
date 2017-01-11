@@ -1,7 +1,7 @@
 # test-case-sa
  My test case for position HTML-dev
  
- В этом проекте используются такие технологии, как Gulp и SASS.
+ В этом проекте используются такие технологии, как Foundation, Normalize, jQuery, Gulp и SASS.
  
  Для начала работы необходимо установить библиотеки из npm с помощью
  ```
