@@ -38,8 +38,10 @@ gulp.task('sass', function() {
 });
 
 gulp.task('icons', function() {
-    return gulp.src('node_modules/font-awesome/fonts/**.*')
-        .pipe(gulp.dest('./assets/fonts'));
+    return gulp.src([
+        'node_modules/font-awesome/fonts/**.*'
+    ])
+        .pipe(gulp.dest('dev/fonts'));
 });
 gulp.task('libs', function() {
     return gulp.src([
@@ -58,7 +60,7 @@ gulp.task('js', function() {
         .pipe(browserSync.reload({stream:true}));
 });
 
-gulp.task('watch', ['sass','libs', 'browser-sync'], function() {
+gulp.task('watch', ['sass','libs', 'icons', 'browser-sync'], function() {
     gulp.watch('dev/sass/**/*.sass', ['sass']);
     gulp.watch(['dev/js/*'], ['libs']);
     gulp.watch('dev/*.html', browserSync.reload);
