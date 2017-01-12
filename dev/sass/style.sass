@@ -26,7 +26,7 @@ body
   display: flex
   min-height: 100vh
   flex-direction: column
-  height: 100vh
+
 a
   text-decoration: none
   color: inherit
@@ -165,17 +165,18 @@ ul
   animation-duration: 2s
   transform: translateX(-15%) skew(-24deg)
 
-  @media screen and (max-width: 1280px)
-  @media screen and (max-width: 1290px)
-    width: 85%
+  @media screen and (max-width: 1400px)
+    width: 90%
     transform: translateX(-35%) skew(-24deg)
   @media screen and (max-width: 1023px)
     width: 85%
     transform: translateX(-30%) skew(-24deg)
+  @media screen and (max-width: 520px)
+    width: 100%
+    transform: translateX(-30%) skew(-24deg)
   @media screen and (max-width: 480px)
     width: 100%
     transform: translateX(-44%) skew(-24deg)
-
 @keyframes slide-left
   0%
     transform: translateX(-100%) skew(-24deg)
@@ -188,6 +189,12 @@ ul
     100%
       transform: translateX(-35%) skew(-24deg)
 @media screen and (max-width: 1023px)
+  @keyframes slide-left
+    0%
+      transform: translateX(-100%) skew(-24deg)
+    100%
+      transform: translateX(-30%) skew(-24deg)
+@media screen and (max-width: 520px)
   @keyframes slide-left
     0%
       transform: translateX(-100%) skew(-24deg)
@@ -208,6 +215,7 @@ ul
   margin-top: 8.3rem
   margin-bottom: 0
   @media screen and (max-width: 1199px)
+    margin-top: 2rem
     font-size: 5rem
   @media screen and (max-width: 767px)
     font-size: 4rem
@@ -221,6 +229,8 @@ ul
   padding: 4.8rem
   border-radius: 50%
   z-index: 2
+  @media screen and (max-width: 1199px)
+    padding: 1.8rem
   @media screen and (max-width: 767px)
     padding: 3rem
   @media screen and (max-width: 670px)
@@ -278,14 +288,18 @@ ul
     padding: 0
 /**** Footer ****/
 .footer
-  padding: 3.6rem 0 2.5rem 0
+  padding: 3rem 0 2.5rem 0
   background-color: #000000
-  font-size: 1.4rem
+  font-size: 1.6rem
   line-height: 2rem
+  @media screen and (max-width: 1199px)
+    font-size: 1.2rem
   @media screen and (max-width: 480px)
     font-size: 1.2rem
     line-height: 2.1rem
     padding: 3.6rem 1rem 2.4rem 1rem
+.footer__socials
+  align-content: center
 .span-hint
   color: #797f83
   @media screen and (max-width: 480px)
