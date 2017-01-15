@@ -15,7 +15,7 @@ var gulp = require('gulp'),
 gulp.task('browser-sync', function () {
     browserSync({
         server: {
-            baseDir: 'dev'
+            baseDir: ["./", "./dev"]
         },
         notify: false
     });
@@ -45,11 +45,12 @@ gulp.task('icons', function() {
 });
 gulp.task('libs', function() {
     return gulp.src([
-        'node_modules/jquery/dist/jquery.min.js'
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/pixel-glass/script.js'
     ])
         .pipe(uglify())
-        .pipe(gulp.dest('dev/js'))
-        .pipe(browserSync.reload({stream:true}));
+        .pipe(gulp.dest('dev/js'));
+        // .pipe(browserSync.reload({stream:true}));
 });
 gulp.task('js', function() {
     return gulp.src([
@@ -60,9 +61,9 @@ gulp.task('js', function() {
         .pipe(browserSync.reload({stream:true}));
 });
 
-gulp.task('watch', ['sass','libs', 'icons', 'browser-sync'], function() {
+gulp.task('watch', ['sass','js', 'libs', 'icons', 'browser-sync'], function() {
     gulp.watch('dev/sass/**/*.sass', ['sass']);
-    gulp.watch(['dev/js/*'], ['libs']);
+    gulp.watch(['dev/js/*'], ['js']);
     gulp.watch('dev/*.html', browserSync.reload);
 });
 
